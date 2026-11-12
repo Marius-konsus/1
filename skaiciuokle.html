@@ -516,8 +516,8 @@ details.more[open]>summary::after{content:"–"}
 
     // variantų lentelė
     $("mx").style.setProperty("--cols",cols.length);$("mx").classList.toggle("single",!shOnG);
-    $("mx").innerHTML=`<div class="mx-h corner"></div>${cols.map(cl=>`<div class="mx-h">${cl.n} <small>${pl}</small></div>`).join("")}`+
-      ROWS.map(rw=>`<div class="mx-r">${rw.n}</div>`+cells.filter(x=>x.r===rw.r).map(x=>{const d=x.b.net-base;
+    $("mx").innerHTML=`${cols.map(cl=>`<div class="mx-h">${cl.n} <small>${pl}</small></div>`).join("")}`+
+      ROWS.map(rw=>cells.filter(x=>x.r===rw.r).map(x=>{const d=x.b.net-base;
         return `<button type="button" class="mcell${x.code===sel?" sel":""}" data-cell="${x.code}" aria-pressed="${x.code===sel}">
           ${x===top?'<span class="tag">Rekomenduojama</span>':""}
           <span class="ctop">${x.name}</span>
